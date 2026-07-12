@@ -1,0 +1,33 @@
+.admin-users {
+  padding: 50px;
+  background: #f5f7fb;
+  min-height: 100vh;
+}
+
+.admin-users h1 {
+  text-align: center;
+  color: #2563eb;
+  margin-bottom: 40px;
+}
+
+.users-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+.user-card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+
+.user-card h2 {
+  color: #2563eb;
+  margin-bottom: 15px;
+}
+
+.user-card p {
+  margin: 10px 0;
+}

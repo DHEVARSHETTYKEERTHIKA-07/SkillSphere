@@ -1,0 +1,89 @@
+.freelancers {
+  padding: 80px 40px;
+  background: #f8fafc;
+  text-align: center;
+}
+
+.freelancers h2 {
+  font-size: 40px;
+  color: #2563eb;
+  margin-bottom: 15px;
+}
+
+.freelancers-subtitle {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 50px;
+}
+
+.freelancer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.freelancer-card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.08);
+  transition: all .3s ease;
+}
+
+.freelancer-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 35px rgba(37,99,235,.2);
+}
+
+.freelancer-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 4px solid #2563eb;
+}
+
+.freelancer-card h3 {
+  color: #2563eb;
+  margin-bottom: 10px;
+}
+
+.role {
+  font-weight: 600;
+  color: #555;
+}
+
+.freelancer-card p {
+  margin: 8px 0;
+}
+
+.freelancer-card button {
+  margin-top: 20px;
+  background: linear-gradient(135deg,#2563eb,#3b82f6);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: .3s;
+}
+
+.freelancer-card button:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width:768px){
+  .freelancers{
+    padding:60px 20px;
+  }
+
+  .freelancers h2{
+    font-size:32px;
+  }
+
+  .freelancers-subtitle{
+    font-size:16px;
+  }
+}

@@ -1,0 +1,32 @@
+.saved-container {
+  padding: 40px;
+  min-height: 100vh;
+  background: #f4f7fc;
+}
+
+.saved-container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.saved-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.saved-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.saved-card h2 {
+  color: #2563eb;
+  margin-bottom: 15px;
+}
+
+.saved-card p {
+  margin: 10px 0;
+}

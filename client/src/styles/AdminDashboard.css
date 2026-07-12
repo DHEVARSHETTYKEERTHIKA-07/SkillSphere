@@ -1,0 +1,47 @@
+.admin-dashboard {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f7fb;
+}
+
+.admin-card {
+  background: white;
+  padding: 50px;
+  border-radius: 20px;
+  width: 600px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+}
+
+.admin-card h1 {
+  color: #2563eb;
+  margin-bottom: 15px;
+}
+
+.admin-card p {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.admin-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.admin-buttons button {
+  padding: 14px 24px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.admin-buttons button:hover {
+  background: #1d4ed8;
+}

@@ -1,0 +1,176 @@
+.categories {
+  padding: 70px 40px;
+  text-align: center;
+}
+
+.categories h2 {
+  font-size: 38px;
+  margin-bottom: 40px;
+  color: #1e293b;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card h3 {
+  margin-bottom: 15px;
+}
+
+.card p {
+  color: #666;
+}
+.stats {
+  background: #2563eb;
+  color: white;
+  padding: 60px 40px;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.stat-box h2 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.stat-box p {
+  font-size: 18px;
+}
+.freelancers {
+  padding: 80px 40px;
+  background: #f8fafc;
+  text-align: center;
+}
+
+.freelancers h2 {
+  font-size: 38px;
+  margin-bottom: 40px;
+  color: #1e293b;
+}
+
+.freelancer-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.freelancer-card {
+  background: white;
+  width: 280px;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.freelancer-card:hover {
+  transform: translateY(-10px);
+}
+
+.freelancer-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.freelancer-card h3 {
+  margin-top: 15px;
+}
+
+.freelancer-card p {
+  color: gray;
+  margin: 10px 0 20px;
+}
+
+.freelancer-card button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.freelancer-card button:hover {
+  background: #1d4ed8;
+}
+.testimonials {
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 38px;
+  margin-bottom: 40px;
+}
+
+.testimonial-grid {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.testimonial-card {
+  width: 300px;
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.testimonial-card p {
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.testimonial-card h4 {
+  color: #2563eb;
+}
+.cta {
+  background: #2563eb;
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.cta h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.cta p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.cta button {
+  background: white;
+  color: #2563eb;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.cta button:hover {
+  background: #f1f5f9;
+}

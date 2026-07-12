@@ -1,0 +1,48 @@
+.admin-jobs {
+  padding: 50px;
+  background: #f5f7fb;
+  min-height: 100vh;
+}
+
+.admin-jobs h1 {
+  text-align: center;
+  color: #2563eb;
+  margin-bottom: 40px;
+}
+
+.admin-job-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+.admin-job-card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+
+.admin-job-card h2 {
+  color: #2563eb;
+  margin-bottom: 15px;
+}
+
+.admin-job-card p {
+  margin: 10px 0;
+}
+
+.delete-btn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  background: crimson;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background: darkred;
+}

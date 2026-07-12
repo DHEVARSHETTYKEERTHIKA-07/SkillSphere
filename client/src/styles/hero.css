@@ -1,0 +1,109 @@
+.hero {
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #2563eb, #3b82f6, #60a5fa);
+  color: white;
+  padding: 40px 20px;
+}
+
+.hero-content {
+  max-width: 900px;
+}
+
+.hero h1 {
+  font-size: 56px;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  color: #facc15;
+}
+
+.hero p {
+  font-size: 20px;
+  color: #e5e7eb;
+  margin-bottom: 35px;
+  line-height: 1.7;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.primary-btn,
+.secondary-btn {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.primary-btn {
+  background: white;
+  color: #2563eb;
+}
+
+.primary-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+}
+
+.secondary-btn {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.secondary-btn:hover {
+  background: white;
+  color: #2563eb;
+  transform: translateY(-4px);
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 60px;
+  flex-wrap: wrap;
+}
+
+.hero-stats h2 {
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+.hero-stats p {
+  margin: 0;
+  font-size: 16px;
+  color: #f3f4f6;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  .hero-stats {
+    gap: 30px;
+  }
+
+  .hero-stats h2 {
+    font-size: 28px;
+  }
+}
