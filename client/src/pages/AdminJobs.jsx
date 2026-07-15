@@ -29,7 +29,9 @@ function AdminJobs() {
     if (!confirmDelete) return;
 
     try {
-      await axios.delete(`http://localhost:8000/api/jobs/${id}`);
+      await axios.delete(
+  `https://skillsphere-production-f35e.up.railway.app/api/jobs/${id}`
+);
 
       alert("Job Deleted Successfully");
 
