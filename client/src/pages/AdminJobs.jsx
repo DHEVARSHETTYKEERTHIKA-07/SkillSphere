@@ -11,7 +11,9 @@ function AdminJobs() {
 
   const fetchJobs = async () => {
     try {
-      const res = await axios.get("http://localhost:8000/api/jobs");
+      const res = await axios.get(
+  "https://skillsphere-production-f35e.up.railway.app/api/jobs"
+);
       setJobs(res.data);
     } catch (error) {
       console.log(error);

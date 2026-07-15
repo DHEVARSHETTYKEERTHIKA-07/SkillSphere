@@ -12,8 +12,8 @@ function AdminApplications() {
   const fetchApplications = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:8000/api/applications"
-      );
+  "https://skillsphere-production-f35e.up.railway.app/api/applications"
+);
 
       setApplications(res.data);
     } catch (error) {

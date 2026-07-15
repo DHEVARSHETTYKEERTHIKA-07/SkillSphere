@@ -27,7 +27,7 @@ function Register() {
 
     try {
       const res = await axios.post(
-        "http://localhost:8000/api/auth/register",
+        "https://skillsphere-production-f35e.up.railway.app/api/auth/register",
         {
           name: formData.name,
           email: formData.email,

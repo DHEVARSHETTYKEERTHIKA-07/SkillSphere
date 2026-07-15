@@ -15,7 +15,7 @@ function JobDetails() {
   const fetchJob = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:8000/api/jobs/${id}`
+        `https://skillsphere-production-f35e.up.railway.app/api/jobs/${id}`
       );
 
       setJob(res.data);
@@ -31,7 +31,7 @@ function JobDetails() {
       const user = JSON.parse(localStorage.getItem("user"));
 
       const res = await axios.post(
-        "http://localhost:8000/api/applications",
+        "https://skillsphere-production-f35e.up.railway.app/api/applications",
         {
           user: user._id || user.id,
           job: job._id,
@@ -51,7 +51,7 @@ function JobDetails() {
       const user = JSON.parse(localStorage.getItem("user"));
 
       const res = await axios.post(
-        "http://localhost:8000/api/saved-jobs",
+        "https://skillsphere-production-f35e.up.railway.app/api/saved-jobs",
         {
           user: user._id || user.id,
           job: job._id,

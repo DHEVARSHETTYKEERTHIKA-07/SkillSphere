@@ -11,7 +11,10 @@ function AdminUsers() {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get("http://localhost:8000/api/auth/users");
+      const res = await axios.get(
+        "https://skillsphere-production-f35e.up.railway.app/api/auth/users"
+      );
+
       setUsers(res.data);
     } catch (error) {
       console.log(error);

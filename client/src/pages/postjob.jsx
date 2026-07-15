@@ -23,7 +23,7 @@ function PostJob() {
 
     try {
       const res = await axios.post(
-        "http://localhost:8000/api/jobs",
+        "https://skillsphere-production-f35e.up.railway.app/api/jobs",
         formData
       );
 

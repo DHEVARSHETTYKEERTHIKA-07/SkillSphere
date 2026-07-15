@@ -25,7 +25,7 @@ function Login() {
 
     try {
       const res = await axios.post(
-        "http://localhost:8000/api/auth/login",
+        "https://skillsphere-production-f35e.up.railway.app/api/auth/login",
         {
           email: formData.email,
           password: formData.password,

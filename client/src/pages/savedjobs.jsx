@@ -12,7 +12,7 @@ function SavedJobs() {
   const fetchSavedJobs = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:8000/api/saved-jobs"
+        "https://skillsphere-production-f35e.up.railway.app/api/saved-jobs"
       );
 
       setSavedJobs(res.data);
