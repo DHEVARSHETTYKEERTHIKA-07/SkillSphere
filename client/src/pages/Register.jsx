@@ -1,9 +1,11 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../styles/Register.css";
 
 function Register() {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -36,7 +38,7 @@ function Register() {
         }
       );
 
-      alert(res.data.message);
+      alert("✅ Registration Successful! Please login.");
 
       setFormData({
         name: "",
@@ -44,6 +46,9 @@ function Register() {
         password: "",
         confirmPassword: "",
       });
+
+      // Redirect to Login page
+      navigate("/login");
 
     } catch (err) {
       alert(err.response?.data?.message || "Registration Failed");
@@ -69,6 +74,7 @@ function Register() {
             placeholder="👤 Full Name"
             value={formData.name}
             onChange={handleChange}
+            required
           />
 
           <input
@@ -77,6 +83,7 @@ function Register() {
             placeholder="📧 Email Address"
             value={formData.email}
             onChange={handleChange}
+            required
           />
 
           <input
@@ -85,6 +92,7 @@ function Register() {
             placeholder="🔒 Password"
             value={formData.password}
             onChange={handleChange}
+            required
           />
 
           <input
@@ -93,6 +101,7 @@ function Register() {
             placeholder="🔐 Confirm Password"
             value={formData.confirmPassword}
             onChange={handleChange}
+            required
           />
 
           <button type="submit">
