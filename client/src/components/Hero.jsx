@@ -1,19 +1,27 @@
 import { useNavigate } from "react-router-dom";
 import "../styles/Hero.css";
+import heroImage from "../assets/hero-illustration.svg";
 
 function Hero() {
   const navigate = useNavigate();
 
   return (
     <section className="hero">
-      <div className="hero-content">
+      <div className="hero-left">
+        <span className="hero-badge">
+          🚀 Trusted by 10,000+ Job Seekers
+        </span>
+
         <h1>
-          Find Your <span>Dream Job</span> Today 🚀
+          Find Your <span>Dream Career</span>
+          <br />
+          with SkillSphere
         </h1>
 
         <p>
-          Connect with top companies, discover exciting career opportunities,
-          and build your future with SkillSphere.
+          Discover internships, freelance projects, and full-time
+          opportunities from top companies. Start your career journey with
+          SkillSphere and connect with employers across India.
         </p>
 
         <div className="hero-buttons">
@@ -21,14 +29,14 @@ function Hero() {
             className="primary-btn"
             onClick={() => navigate("/jobs")}
           >
-            💼 Browse Jobs
+            Explore Jobs
           </button>
 
           <button
             className="secondary-btn"
             onClick={() => navigate("/register")}
           >
-            🚀 Get Started
+            Get Started
           </button>
         </div>
 
@@ -48,6 +56,13 @@ function Hero() {
             <p>Users</p>
           </div>
         </div>
+      </div>
+
+      <div className="hero-right">
+        <img
+          src={heroImage}
+          alt="Job Search Illustration"
+        />
       </div>
     </section>
   );

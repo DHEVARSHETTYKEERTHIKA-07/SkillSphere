@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import "../styles/Login.css";
 
@@ -11,7 +11,6 @@ function Login() {
     password: "",
   });
 
-  // Handle input changes
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -19,7 +18,6 @@ function Login() {
     });
   };
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -32,24 +30,16 @@ function Login() {
         }
       );
 
-      // Save token
       localStorage.setItem("token", res.data.token);
-
-      // Save logged in user
-      localStorage.setItem(
-        "user",
-        JSON.stringify(res.data.user)
-      );
+      localStorage.setItem("user", JSON.stringify(res.data.user));
 
       alert(res.data.message);
 
-      // Clear form
       setFormData({
         email: "",
         password: "",
       });
 
-      // Redirect to Dashboard
       navigate("/dashboard");
 
     } catch (err) {
@@ -59,15 +49,37 @@ function Login() {
 
   return (
     <div className="login-container">
+
+      <div className="login-left">
+
+        <h1>Welcome Back 👋</h1>
+
+        <p>
+          Login to SkillSphere and discover thousands of jobs from
+          top companies.
+        </p>
+
+        <img
+          src="https://undraw.co/api/illustrations/4d56a490-7fb5-470f-a01d-61d6df8f61c4"
+          alt="Login"
+        />
+
+      </div>
+
       <div className="login-card">
-        <h2>Welcome Back 👋</h2>
-        <p>Login to your SkillSphere account</p>
+
+        <h2>Login</h2>
+
+        <p>
+          Continue your career journey
+        </p>
 
         <form onSubmit={handleSubmit}>
+
           <input
             type="email"
             name="email"
-            placeholder="Enter your email"
+            placeholder="📧 Email Address"
             value={formData.email}
             onChange={handleChange}
           />
@@ -75,7 +87,7 @@ function Login() {
           <input
             type="password"
             name="password"
-            placeholder="Enter your password"
+            placeholder="🔒 Password"
             value={formData.password}
             onChange={handleChange}
           />
@@ -83,12 +95,18 @@ function Login() {
           <button type="submit">
             Login
           </button>
+
         </form>
 
         <p className="register-link">
-          Don't have an account? Register
+          Don't have an account?{" "}
+          <Link to="/register">
+            Register Now
+          </Link>
         </p>
+
       </div>
+
     </div>
   );
 }

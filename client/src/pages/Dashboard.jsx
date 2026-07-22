@@ -19,38 +19,79 @@ function Dashboard() {
   return (
     <div className="dashboard">
       <div className="dashboard-card">
-        <h1>👋 Welcome, {user?.name || "User"}!</h1>
 
-        <p>Build your freelancing career with SkillSphere 🚀</p>
+        <div className="dashboard-header">
+          <h1>👋 Welcome back, {user?.name || "User"}!</h1>
 
-        {/* Quick Stats */}
-        <div className="stats-grid">
-          <div className="stat-card">
-            <h2>💼</h2>
-            <h3>Jobs</h3>
-            <p>Explore Opportunities</p>
-          </div>
-
-          <div className="stat-card">
-            <h2>📄</h2>
-            <h3>Applications</h3>
-            <p>Track Your Progress</p>
-          </div>
-
-          <div className="stat-card">
-            <h2>❤️</h2>
-            <h3>Saved Jobs</h3>
-            <p>Your Favorites</p>
-          </div>
-
-          <div className="stat-card">
-            <h2>👤</h2>
-            <h3>Profile</h3>
-            <p>Manage Account</p>
-          </div>
+          <p>
+            Ready to take the next step in your career?
+            Explore jobs, manage applications, and build your future with SkillSphere.
+          </p>
         </div>
 
+        {/* Dashboard Cards */}
+
+        <div className="stats-grid">
+
+          <div
+            className="stat-card"
+            onClick={() => navigate("/jobs")}
+          >
+            <h2>💼</h2>
+            <h3>Browse Jobs</h3>
+            <p>Find your dream job.</p>
+          </div>
+
+          <div
+            className="stat-card"
+            onClick={() => navigate("/applications")}
+          >
+            <h2>📄</h2>
+            <h3>Applications</h3>
+            <p>Track your applications.</p>
+          </div>
+
+          <div
+            className="stat-card"
+            onClick={() => navigate("/saved-jobs")}
+          >
+            <h2>❤️</h2>
+            <h3>Saved Jobs</h3>
+            <p>View your favourites.</p>
+          </div>
+
+          <div
+            className="stat-card"
+            onClick={() => navigate("/profile")}
+          >
+            <h2>👤</h2>
+            <h3>My Profile</h3>
+            <p>Manage your profile.</p>
+          </div>
+
+        </div>
+
+        {/* Recent Activity */}
+
+        <div className="recent-activity">
+
+          <h2>📈 Recent Activity</h2>
+
+          <ul>
+            <li>✅ Welcome to SkillSphere.</li>
+            <li>💼 Explore the latest job opportunities.</li>
+            <li>📄 Track all your applications.</li>
+            <li>👤 Update your profile anytime.</li>
+          </ul>
+
+        </div>
+
+        <h2 className="quick-title">
+          Quick Actions
+        </h2>
+
         <div className="dashboard-buttons">
+
           <button onClick={() => navigate("/jobs")}>
             💼 Browse Jobs
           </button>
@@ -67,18 +108,23 @@ function Dashboard() {
             ❤️ Saved Jobs
           </button>
 
-          <button onClick={() => navigate("/admin")}>
-            🛠 Admin Panel
-          </button>
-
           <button onClick={() => navigate("/profile")}>
             👤 My Profile
           </button>
 
-          <button onClick={handleLogout}>
+          <button onClick={() => navigate("/admin")}>
+            🛠 Admin Panel
+          </button>
+
+          <button
+            className="logout"
+            onClick={handleLogout}
+          >
             🚪 Logout
           </button>
+
         </div>
+
       </div>
     </div>
   );

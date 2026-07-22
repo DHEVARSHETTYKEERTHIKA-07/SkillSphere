@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "../styles/Register.css";
 
@@ -43,6 +44,7 @@ function Register() {
         password: "",
         confirmPassword: "",
       });
+
     } catch (err) {
       alert(err.response?.data?.message || "Registration Failed");
     }
@@ -50,16 +52,21 @@ function Register() {
 
   return (
     <div className="register-container">
+
       <div className="register-card">
+
         <h2>Create Account 🚀</h2>
 
-        <p>Join SkillSphere and start your freelancing journey</p>
+        <p>
+          Join SkillSphere and start your career journey
+        </p>
 
         <form onSubmit={handleSubmit}>
+
           <input
             type="text"
             name="name"
-            placeholder="Full Name"
+            placeholder="👤 Full Name"
             value={formData.name}
             onChange={handleChange}
           />
@@ -67,7 +74,7 @@ function Register() {
           <input
             type="email"
             name="email"
-            placeholder="Email Address"
+            placeholder="📧 Email Address"
             value={formData.email}
             onChange={handleChange}
           />
@@ -75,7 +82,7 @@ function Register() {
           <input
             type="password"
             name="password"
-            placeholder="Password"
+            placeholder="🔒 Password"
             value={formData.password}
             onChange={handleChange}
           />
@@ -83,18 +90,26 @@ function Register() {
           <input
             type="password"
             name="confirmPassword"
-            placeholder="Confirm Password"
+            placeholder="🔐 Confirm Password"
             value={formData.confirmPassword}
             onChange={handleChange}
           />
 
-          <button type="submit">Register</button>
+          <button type="submit">
+            Create Account
+          </button>
+
         </form>
 
         <p className="login-link">
-          Already have an account? Login
+          Already have an account?{" "}
+          <Link to="/login">
+            Login
+          </Link>
         </p>
+
       </div>
+
     </div>
   );
 }

@@ -6,6 +6,7 @@ import "../styles/Jobs.css";
 function Jobs() {
   const [jobs, setJobs] = useState([]);
   const [search, setSearch] = useState("");
+  const [loading, setLoading] = useState(true);
 
   const navigate = useNavigate();
 
@@ -15,6 +16,8 @@ function Jobs() {
 
   const fetchJobs = async () => {
     try {
+      setLoading(true);
+
       const res = await axios.get(
         "https://skillsphere-production-f35e.up.railway.app/api/jobs"
       );
@@ -23,6 +26,8 @@ function Jobs() {
     } catch (error) {
       console.log(error);
       alert("Failed to load jobs");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -32,59 +37,63 @@ function Jobs() {
 
   return (
     <div className="jobs-container">
-      <h1>💼 Browse Jobs</h1>
+      <h1>💼 Discover Your Next Opportunity</h1>
 
       <input
         type="text"
-        placeholder="🔍 Search jobs..."
+        placeholder="🔍 Search by job title..."
         className="search-box"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
 
-      <div className="jobs-grid">
-        {filteredJobs.length > 0 ? (
-          filteredJobs.map((job) => (
-            <div className="job-card" key={job._id}>
-              <h2>{job.title}</h2>
+      {loading ? (
+        <h2 className="loading-text">⏳ Loading jobs...</h2>
+      ) : (
+        <div className="jobs-grid">
+          {filteredJobs.length > 0 ? (
+            filteredJobs.map((job) => (
+              <div className="job-card" key={job._id}>
+                <h2>💼 {job.title}</h2>
 
-              <p>
-                <strong>🏢 Company:</strong> {job.company}
-              </p>
+                <p>
+                  <strong>🏢 {job.company}</strong>
+                </p>
 
-              <p>
-                <strong>📍 Location:</strong> {job.location}
-              </p>
+                <p>📍 {job.location}</p>
 
-              <p>
-                <strong>💰 Salary:</strong> {job.salary}
-              </p>
+                <p>💰 {job.salary}</p>
 
-              <p>
-                <strong>📝 Description:</strong> {job.description}
-              </p>
+                <p>
+                  <strong>About the Role</strong>
+                </p>
 
-              <div className="job-buttons">
-                <button
-                  onClick={() => navigate(`/job/${job._id}`)}
-                >
-                  View Details
-                </button>
+                <p>{job.description}</p>
 
-                <button
-                  onClick={() =>
-                    alert("🎉 Application feature coming soon!")
-                  }
-                >
-                  Apply Now
-                </button>
+                <div className="job-buttons">
+                  <button
+                    onClick={() => navigate(`/job/${job._id}`)}
+                  >
+                    View Details
+                  </button>
+
+                  <button
+                    onClick={() =>
+                      alert("🎉 Application feature coming soon!")
+                    }
+                  >
+                    Apply Now
+                  </button>
+                </div>
               </div>
-            </div>
-          ))
-        ) : (
-          <h2>No Jobs Found</h2>
-        )}
-      </div>
+            ))
+          ) : (
+            <h2 className="no-jobs">
+              😔 No jobs found. Try another search.
+            </h2>
+          )}
+        </div>
+      )}
     </div>
   );
 }

@@ -1,8 +1,9 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import "../styles/Navbar.css";
 
 function Navbar() {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const token = localStorage.getItem("token");
   const user = JSON.parse(localStorage.getItem("user"));
@@ -19,25 +20,47 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <h2 className="logo">🚀 SkillSphere</h2>
+      <Link to="/" className="logo">
+        🚀 <span>SkillSphere</span>
+      </Link>
 
       <ul className="nav-links">
         <li>
-          <Link to="/">Home</Link>
+          <Link
+            className={location.pathname === "/" ? "active" : ""}
+            to="/"
+          >
+            Home
+          </Link>
         </li>
 
         {token && (
           <>
             <li>
-              <Link to="/jobs">Jobs</Link>
+              <Link
+                className={location.pathname === "/jobs" ? "active" : ""}
+                to="/jobs"
+              >
+                Jobs
+              </Link>
             </li>
 
             <li>
-              <Link to="/dashboard">Dashboard</Link>
+              <Link
+                className={location.pathname === "/dashboard" ? "active" : ""}
+                to="/dashboard"
+              >
+                Dashboard
+              </Link>
             </li>
 
             <li>
-              <Link to="/profile">Profile</Link>
+              <Link
+                className={location.pathname === "/profile" ? "active" : ""}
+                to="/profile"
+              >
+                Profile
+              </Link>
             </li>
           </>
         )}
@@ -45,17 +68,35 @@ function Navbar() {
         {!token ? (
           <>
             <li>
-              <Link to="/login">Login</Link>
+              <Link
+                className={location.pathname === "/login" ? "active" : ""}
+                to="/login"
+              >
+                Login
+              </Link>
             </li>
 
             <li>
-              <Link to="/register">Register</Link>
+              <Link className="register-btn" to="/register">
+                Register
+              </Link>
             </li>
           </>
         ) : (
           <>
             <li className="welcome-user">
-              👋 {user?.name}
+              <img
+                src={
+                  user?.image ||
+                  "https://i.pravatar.cc/150?img=15"
+                }
+                alt="Profile"
+                className="nav-profile"
+              />
+
+              <span>
+                Hi, <strong>{user?.name}</strong>
+              </span>
             </li>
 
             <li>
